@@ -16,7 +16,7 @@ bot = Bot(token=config.token, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot, storage=storage)
 
 
-dp.register_message_handler(hd.main_menu_message, commands=['Start', 'Help'])
+dp.register_message_handler(hd.main_menu_initial, commands=['Start'])
 
 dp.register_callback_query_handler(hd.info,
                             lambda call: call.data in ('info', 'navi_info'))
@@ -24,7 +24,9 @@ dp.register_callback_query_handler(hd.chats,
                             lambda call: call.data in ('chats', 'navi_chats'))
 dp.register_callback_query_handler(hd.uprav,
                             lambda call: call.data in ('uprav', 'navi_uprav'))
-dp.register_callback_query_handler(hd.main_menu_call,
+dp.register_callback_query_handler(hd.kadastr,
+                            lambda call: call.data in ('kadastr'))
+dp.register_callback_query_handler(hd.main_menu,
                             lambda call: call.data in ('navi_main_menu'))
 
 
