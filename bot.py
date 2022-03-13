@@ -21,6 +21,8 @@ dp.register_callback_query_handler(hd.uprav,
                                    lambda call: call.data in ('uprav', 'navi_uprav'))
 dp.register_callback_query_handler(hd.kadastr,
                                    lambda call: call.data in ('kadastr'))
+dp.register_callback_query_handler(hd.kpp,
+                                   lambda call: call.data in ('kpp'))
 dp.register_callback_query_handler(hd.main_menu,
                                    lambda call: call.data in ('navi_main_menu'))
 

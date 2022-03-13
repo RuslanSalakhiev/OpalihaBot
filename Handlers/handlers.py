@@ -35,6 +35,13 @@ async def uprav(call: types.CallbackQuery):
     await call.answer()
 
 
+async def kpp(call: types.CallbackQuery):
+    await call.message.edit_caption(caption='Чат с информацией о работе КПП:\nt.me/kpp69\n\nГенератор квитанций на оплату взносов за КПП:\nhttps://qr.tsnopalihao3.ru',
+                                    reply_markup=kb.navigation_only_keyboard(previous_step='main_menu'))
+    await call.answer()
+
+
+
 async def chats(call: types.CallbackQuery):
     if call.data == 'chats_1':
         message = '''
