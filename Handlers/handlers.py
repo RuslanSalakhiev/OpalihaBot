@@ -30,8 +30,8 @@ async def info(call: types.CallbackQuery):
 
 
 async def uprav(call: types.CallbackQuery):
-    await call.message.edit_caption(caption='Об управляющей компании',
-                                    reply_markup=kb.uprav_keyboard(previous_step='main_menu'))
+    await call.message.edit_caption(caption='Контакты управляющей компании:\nТел:+74993750571\nМоб:+79014004042',
+                                    reply_markup=kb.navigation_only_keyboard(previous_step='main_menu'))
     await call.answer()
 
 
@@ -80,6 +80,6 @@ async def chats(call: types.CallbackQuery):
 
 
 async def kadastr(call: types.CallbackQuery):
-    await call.message.edit_caption(caption='Кадастровый номер: 50:11:0040203:9321',
+    await call.message.edit_caption(caption='Кадастровый номер дома: 50:11:0040203:9321\nУзнать кадастровый номер квартиры или кладовки: https://lk.rosreestr.ru/eservices/real-estate-objects-online',
                                     reply_markup=kb.navigation_only_keyboard(previous_step='info'))
     await call.answer()

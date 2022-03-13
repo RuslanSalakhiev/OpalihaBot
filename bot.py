@@ -7,7 +7,6 @@ import asyncio
 import config
 from Handlers import handlers as hd
 
-logging.basicConfig(level=logging.INFO)
 storage = MemoryStorage()
 bot = Bot(token=config.token, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot, storage=storage)
