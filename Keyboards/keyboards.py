@@ -27,8 +27,10 @@ def navigation_only_keyboard(previous_step):
 def main_menu_keyboard() -> InlineKeyboardMarkup:
     buttons = [
         InlineKeyboardButton(text=emoji.emojize(":house:") + " Информация о доме", callback_data="info"),
-        InlineKeyboardButton(text=emoji.emojize(":toolbox:") + " Управляющая компания", callback_data="uprav"),
+        InlineKeyboardButton(text=emoji.emojize(":toolbox:") + " УК и аварийные службы", callback_data="uprav"),
         InlineKeyboardButton(text=emoji.emojize(":construction:") + " КПП", callback_data="kpp"),
+        InlineKeyboardButton(text=emoji.emojize(":linked_paperclips:") + " Оформление документов",
+                             callback_data="docs"),
         InlineKeyboardButton(text=emoji.emojize(":speaking_head:") + " Чаты Опалихи", callback_data="chats_1"),
     ]
     keyboard = InlineKeyboardMarkup(row_width=1)
@@ -38,8 +40,18 @@ def main_menu_keyboard() -> InlineKeyboardMarkup:
 
 def info_keyboard(previous_step) -> InlineKeyboardMarkup:
     buttons = [
-        InlineKeyboardButton(text="Кадастровый номер", callback_data="kadastr"),
+        InlineKeyboardButton(text="Кадастровые номера (дом,квартира)", callback_data="kadastr"),
         InlineKeyboardButton(text="Тех. отчет, Тех. план", url="https://фонд214.рф/projects/opaliha/292/"),
+    ]
+    keyboard = InlineKeyboardMarkup(row_width=1)
+    keyboard.add(*buttons)
+    keyboard.row(*navigation_buttons(previous_step))
+    return keyboard
+
+
+def docs_keyboard(previous_step) -> InlineKeyboardMarkup:
+    buttons = [
+        InlineKeyboardButton(text="Прописка и регистрация", callback_data="registration")
     ]
     keyboard = InlineKeyboardMarkup(row_width=1)
     keyboard.add(*buttons)
@@ -50,10 +62,10 @@ def info_keyboard(previous_step) -> InlineKeyboardMarkup:
 def chats_keyboard(previous_step, current_step) -> InlineKeyboardMarkup:
     if current_step == '1':
         buttons = [InlineKeyboardButton(text="Дальше →",
-                             callback_data="chats_2")]
+                                        callback_data="chats_2")]
     else:
         buttons = [InlineKeyboardButton(text="← Назад",
-                         callback_data="chats_1")]
+                                        callback_data="chats_1")]
     keyboard = InlineKeyboardMarkup(row_width=1)
     keyboard.add(*buttons)
     keyboard.row(*navigation_buttons(previous_step))

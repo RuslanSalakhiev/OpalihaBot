@@ -30,16 +30,60 @@ async def info(call: types.CallbackQuery):
 
 
 async def uprav(call: types.CallbackQuery):
-    await call.message.edit_caption(caption='Контакты управляющей компании:\nТел:+74993750571\nМоб:+79014004042',
+    await call.message.edit_caption(caption='''
+🚨 Аварийная диспетчерская служба 🚨
++7(499)375-05-71(круглосуточно)
+
+Управляющая компания
+Офис ООО УК "Скай Плюс"
+ул. Пришвина 17, под.4, 1этаж
+
+Почта: uk.skyplus@gmail.com
+Сайт:  uk-skyplus.ru
+
+График работы
+Пн-Пт:   9.00-18.00
+Сб-Вс:   Выходной
+Обед:    13.00-14.00 
+
+Контакты:
++7(499)375-05-71
++7(901)400-40-42 (Егор)
++7(926)465-61-70 (Ксения)    
+''',
                                     reply_markup=kb.navigation_only_keyboard(previous_step='main_menu'))
     await call.answer()
 
 
 async def kpp(call: types.CallbackQuery):
-    await call.message.edit_caption(caption='Чат с информацией о работе КПП:\nt.me/kpp69\n\nГенератор квитанций на оплату взносов за КПП:\nhttps://qr.tsnopalihao3.ru',
-                                    reply_markup=kb.navigation_only_keyboard(previous_step='main_menu'))
+    await call.message.edit_caption(
+        caption='Чат с информацией о работе КПП:\nt.me/kpp69\n\nГенератор квитанций на оплату взносов за КПП:\nhttps://qr.tsnopalihao3.ru',
+        reply_markup=kb.navigation_only_keyboard(previous_step='main_menu'))
     await call.answer()
 
+
+async def docs(call: types.CallbackQuery):
+    await call.message.edit_caption(
+        caption='Инструкции для жителей по оформлению документов',
+        reply_markup=kb.docs_keyboard(previous_step='main_menu'))
+    await call.answer()
+
+
+async def registration(call: types.CallbackQuery):
+    await call.message.edit_caption(
+        caption='''
+По вопросу прописки и регистрации по месту жительств:
+
+Заявление подается через портал Госуслуги: 
+https://www.gosuslugi.ru/600124/1/form?_=1647255022576
+
+Отделение: 
+Миграционный пункт №1 отдела по вопросам миграции УМВД России по г.о. Красногорск. 
+Адрес: Московская обл, Красногорск г, Ильинское ш, д. 2
+Телефон: +7(495)562-86-66
+''',
+        reply_markup=kb.navigation_only_keyboard(previous_step='docs'))
+    await call.answer()
 
 
 async def chats(call: types.CallbackQuery):
@@ -82,11 +126,13 @@ async def chats(call: types.CallbackQuery):
 🌱 ОЗЕЛЕНЕНИЕ О3 t.me/joinchat/HCFQ41RYhf9gaQitShAEEA
 '''
     await call.message.edit_caption(caption=message,
-                                    reply_markup=kb.chats_keyboard(previous_step='main_menu', current_step=call.data[-1]))
+                                    reply_markup=kb.chats_keyboard(previous_step='main_menu',
+                                                                   current_step=call.data[-1]))
     await call.answer()
 
 
 async def kadastr(call: types.CallbackQuery):
-    await call.message.edit_caption(caption='Кадастровый номер дома: 50:11:0040203:9321\nУзнать кадастровый номер квартиры или кладовки: https://lk.rosreestr.ru/eservices/real-estate-objects-online',
-                                    reply_markup=kb.navigation_only_keyboard(previous_step='info'))
+    await call.message.edit_caption(
+        caption='Кадастровый номер дома: 50:11:0040203:9321\nУзнать кадастровый номер квартиры или кладовки: https://lk.rosreestr.ru/eservices/real-estate-objects-online',
+        reply_markup=kb.navigation_only_keyboard(previous_step='info'))
     await call.answer()
