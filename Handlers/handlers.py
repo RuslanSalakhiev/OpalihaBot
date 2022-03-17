@@ -31,9 +31,6 @@ async def info(call: types.CallbackQuery):
 
 async def uprav(call: types.CallbackQuery):
     await call.message.edit_caption(caption='''
-🚨 Аварийная диспетчерская служба 🚨
-+7(499)375-05-71(круглосуточно)
-
 Управляющая компания
 Офис ООО УК "Скай Плюс"
 ул. Пришвина 17, под.4, 1этаж
@@ -50,6 +47,18 @@ async def uprav(call: types.CallbackQuery):
 +7(499)375-05-71
 +7(901)400-40-42 (Егор)
 +7(926)465-61-70 (Ксения)    
+''',
+                                    reply_markup=kb.navigation_only_keyboard(previous_step='main_menu'))
+    await call.answer()
+
+
+async def avariya(call: types.CallbackQuery):
+    await call.message.edit_caption(caption='''
+Аварийная диспетчерская служба (УК)
++7(499)375-05-71(круглосуточно)
+
+Аварийная по лифтам (ООО Сорекс)
++7(926)001-51-84
 ''',
                                     reply_markup=kb.navigation_only_keyboard(previous_step='main_menu'))
     await call.answer()

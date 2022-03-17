@@ -26,8 +26,9 @@ def navigation_only_keyboard(previous_step):
 
 def main_menu_keyboard() -> InlineKeyboardMarkup:
     buttons = [
+        InlineKeyboardButton(text=emoji.emojize(":police_car_light:") + " Аварийные службы", callback_data="avariya"),
         InlineKeyboardButton(text=emoji.emojize(":house:") + " Информация о доме", callback_data="info"),
-        InlineKeyboardButton(text=emoji.emojize(":toolbox:") + " УК и аварийные службы", callback_data="uprav"),
+        InlineKeyboardButton(text=emoji.emojize(":toolbox:") + " Управляющая компания", callback_data="uprav"),
         InlineKeyboardButton(text=emoji.emojize(":construction:") + " КПП", callback_data="kpp"),
         InlineKeyboardButton(text=emoji.emojize(":linked_paperclips:") + " Оформление документов",
                              callback_data="docs"),
