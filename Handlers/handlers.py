@@ -142,6 +142,12 @@ async def chats(call: types.CallbackQuery):
 
 async def kadastr(call: types.CallbackQuery):
     await call.message.edit_caption(
-        caption='Кадастровый номер дома: 50:11:0040203:9321\nУзнать кадастровый номер квартиры или кладовки: https://lk.rosreestr.ru/eservices/real-estate-objects-online',
+        caption='''
+Кадастровый номер дома: 50:11:0040203:9321
+
+Для того, чтобы узнать кадастровый номер квартиры или кладовой необходимо ввести ваш адрес по ссылке:
+https://lk.rosreestr.ru/eservices/real-estate-objects-online
+Обращаем ваше внимание, что в адресе квартира прописывается как "кв", а номер кладовой как "пом"
+''',
         reply_markup=kb.navigation_only_keyboard(previous_step='info'))
     await call.answer()
