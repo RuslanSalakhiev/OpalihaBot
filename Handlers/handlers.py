@@ -37,6 +37,7 @@ async def uprav(call: types.CallbackQuery):
 
 Почта: uk.skyplus@gmail.com
 Сайт:  uk-skyplus.ru
+Бухгалтер: skyplus1@bk.ru
 
 График работы
 Пн-Пт:   9.00-18.00
