@@ -42,7 +42,8 @@ def main_menu_keyboard() -> InlineKeyboardMarkup:
 def info_keyboard(previous_step) -> InlineKeyboardMarkup:
     buttons = [
         InlineKeyboardButton(text="Кадастровые номера (дом,квартира)", callback_data="kadastr"),
-        InlineKeyboardButton(text="Тех. отчет, Тех. план", url="https://фонд214.рф/projects/opaliha/292/"),
+        InlineKeyboardButton(text="Тех. план (pdf)", url="https://фонд214.рф/upload/iblock/9bd/17.pdf"),
+        InlineKeyboardButton(text="Тех. информация", url="https://фонд214.рф/projects/opaliha/292/"),
     ]
     keyboard = InlineKeyboardMarkup(row_width=1)
     keyboard.add(*buttons)
