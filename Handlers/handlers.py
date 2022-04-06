@@ -67,7 +67,19 @@ async def avariya(call: types.CallbackQuery):
 
 async def kpp(call: types.CallbackQuery):
     await call.message.edit_caption(
-        caption='Чат с информацией о работе КПП:\nt.me/kpp69\n\nГенератор квитанций на оплату взносов за КПП:\nhttps://qr.tsnopalihao3.ru',
+        caption='''
+Чат с информацией о работе КПП:
+t.me/kpp69
+
+Генератор квитанций на оплату взносов за КПП:
+https://qr.tsnopalihao3.ru
+
+Узнать, куда эвакуировали авто:  
++7(800)444-58-34 (круглосуточно).
+
+Адрес специализированной стоянки в Красногорске: 
+г. Красногорск, ул. Светлая, напротив д. 1
+''',
         reply_markup=kb.navigation_only_keyboard(previous_step='main_menu'))
     await call.answer()
 
