@@ -144,8 +144,11 @@ async def chats(call: types.CallbackQuery):
 🐕 Владельцы дом. животных t.me/pets_o3
 
 💃🏻 Свободные люди t.me/joinchat/HCFQ402vtm0l7t-XDVzZcA
-
 🌱 ОЗЕЛЕНЕНИЕ О3 t.me/joinchat/HCFQ41RYhf9gaQitShAEEA
+Обмен книгами t.me/books_O3
+Даром https://t.me/O3_darom
+МЦД2 Нахабино - Подольск http://t.me/krasnogorskmcd2
+
 '''
     await call.message.edit_caption(caption=message,
                                     reply_markup=kb.chats_keyboard(previous_step='main_menu',
