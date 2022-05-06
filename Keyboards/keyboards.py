@@ -33,6 +33,7 @@ def main_menu_keyboard() -> InlineKeyboardMarkup:
         InlineKeyboardButton(text=emoji.emojize(":linked_paperclips:") + " Оформление документов",
                              callback_data="docs"),
         InlineKeyboardButton(text=emoji.emojize(":speaking_head:") + " Чаты Опалихи", callback_data="chats_1"),
+        InlineKeyboardButton(text=emoji.emojize(":wastebasket:") + " Чат по вывозу мусора", url="https://chat.whatsapp.com/J94D0NzaelC2lsTVtE3iCP"),
     ]
     keyboard = InlineKeyboardMarkup(row_width=1)
     keyboard.add(*buttons)
