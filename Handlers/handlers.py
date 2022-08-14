@@ -34,6 +34,25 @@ async def uprav(call: types.CallbackQuery):
 Управляющая компания ФЕНИКС
 Телефон диспетчерской службы +7(495)255-04-41
 Чат: https://t.me/chatukfenikso3
+
+
+Прошлая управляющая компания
+Офис ООО УК "Скай Плюс"
+ул. Пришвина 17, под.4, 1этаж
+
+Почта: uk.skyplus@gmail.com
+Сайт:  uk-skyplus.ru
+Бухгалтер: skyplus1@bk.ru
+
+График работы
+Пн-Пт:   9.00-18.00
+Сб-Вс:   Выходной
+Обед:    13.00-14.00 
+
+Контакты:
++7(499)375-05-71
++7(901)400-40-42 (Егор)
++7(926)465-61-70 (Ксения)    
 ''',
                                     reply_markup=kb.navigation_only_keyboard(previous_step='main_menu'))
     await call.answer()
